@@ -46,5 +46,6 @@ RUN pip install --upgrade pip && \
     pip install -r requirements.txt && \
     pip install pytest pytest-qt
 
+RUN chmod +x ./entrypoint.sh
 # run the tests with virtual display
 CMD ["./entrypoint.sh"]
