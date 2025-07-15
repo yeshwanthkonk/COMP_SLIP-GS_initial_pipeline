@@ -1,0 +1,21 @@
+name: Validate the changes
+
+on:
+  push:
+    branches: [ main, dev ]
+  pull_request:
+    branches: [ main, dev ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@pre_test_v1
+
+    - name: Build Docker image
+      run: docker build -t comp_slip_gs_test .
+
+    - name: Run tests in Docker
+      run: docker run comp_slip_gs_test
