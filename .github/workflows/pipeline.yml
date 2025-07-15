@@ -12,7 +12,7 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@pre_test_v1
+      uses: actions/checkout@v4
 
     - name: Build Docker image
       run: docker build -t comp_slip_gs_test .
